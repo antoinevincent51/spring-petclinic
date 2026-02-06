@@ -27,9 +27,10 @@ services:
     restart: always
 
     ports:
-      - "8080:8080"
+      - "9123:9123"
 
     environment:
+      SERVER_PORT: 9123
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/petclinic
       SPRING_DATASOURCE_USERNAME: petclinic
       SPRING_DATASOURCE_PASSWORD: petclinic
@@ -42,10 +43,12 @@ services:
         condition: service_healthy
 
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080"]
-      interval: 15s
-      timeout: 5s
-      retries: 5
+      test: ["CMD-SHELL", "curl -f http://localhost:9123/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
 
 
 networks:
