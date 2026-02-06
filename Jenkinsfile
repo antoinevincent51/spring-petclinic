@@ -5,11 +5,12 @@ pipeline {
 
         stage('Build Maven') {
             steps {
-                echo "Compilation Maven..."
+                echo 'Compilation Maven...'
+                sh 'chmod +x mvnw'
                 sh './mvnw clean package -DskipTests'
-
             }
-        }
+}
+
 
         stage('Build Docker Images') {
             steps {
