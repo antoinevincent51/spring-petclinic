@@ -3,18 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Clone Project') {
-            steps {
-                echo "Récupération du code..."
-                git branch: 'main',
-                    url: 'https://github.com/spring-projects/spring-petclinic.git'
-            }
-        }
-
         stage('Build Maven') {
             steps {
                 echo "Compilation Maven..."
-                sh 'mvn clean package -DskipTests'
+                sh './mvnw clean package -DskipTests'
+
             }
         }
 
@@ -39,3 +32,4 @@ pipeline {
         }
     }
 }
+
