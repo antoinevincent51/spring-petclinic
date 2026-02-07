@@ -34,6 +34,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/petclinic
       SPRING_DATASOURCE_USERNAME: petclinic
       SPRING_DATASOURCE_PASSWORD: petclinic
+      SPRING_PROFILES_ACTIVE: mysql
 
     networks:
       - petclinic-network
@@ -58,8 +59,6 @@ services:
 networks:
   petclinic-network:
     driver: bridge
-networks:
-  petclinic-network:
-    driver: bridge
+
 
 
