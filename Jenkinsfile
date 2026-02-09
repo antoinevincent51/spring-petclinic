@@ -12,19 +12,19 @@ pipeline {
 }
 
 
-        stage('Build Docker Images') {
-            steps {
-               echo "Construction des images Docker..."
-                sh 'docker-compose build'
-            }
-        }
+        //stage('Build Docker Images') {
+            //steps {
+               //echo "Construction des images Docker..."
+                //sh 'docker-compose build'
+            //}
+        //}
 
-        stage('Start Containers') {
-            steps {
-                echo "Lancement des conteneurs..."
-                sh 'docker-compose up -d'
-            }
-        }
+        //stage('Start Containers') {
+            //steps {
+                //echo "Lancement des conteneurs..."
+                //sh 'docker-compose up -d'
+            //}
+        //}
     }
 
     post {
