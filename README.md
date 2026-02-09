@@ -5,3 +5,5 @@ Mes builds jenkins echouaient donc et j'ai décidé que commenter les stages : '
 Ce faisant j'ai pu observer que la liaison entre petclinic et mysql était réussie et que le projet se lançait bien une fois que les deux containers étaient healthy.
 
 J'ai décomenter les deux stages pour le rendu en espérant que le jenkins que vous utilisez a bien accès aux commandes docker mais si ce n'est pas le cas alors il vous suffira de commenter les stages 'Build Docker Images' et 'Start Containers' du jenkins file et de lancer la commande "docker compose up --build" manuellement dans le projet pour vérifier que l'application fonctionne correctement.
+
+L'application se lancera sur le port 9123 du localhost comme il avait été demandé de le faire lors du dernier TD.
